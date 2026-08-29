@@ -1,0 +1,138 @@
+---
+author:
+  name: Бабенко Артём Сергеевич
+  degrees: MSc
+  email: 1032259400@rudn.ru
+  affiliation:
+    - name: Российский университет дружбы народов
+      country: Российская Федерация
+      postal-code: 117198
+      city: Москва
+      address: ул. Миклухо-Маклая, д. 6
+
+title: "Лабораторная работа №4"
+subtitle: "Моделирование конфликта Защитник–Нападающий"
+license: "CC BY"
+date: today
+date-format: "YYYY-MM-DD"
+
+format:
+  beamer:
+    lang: ru-RU
+    colortheme: default                 
+    mainfont: Arial
+    monofont: Courier New
+    aspectratio: 169
+    incremental: false
+    toc: false
+    footer: false
+    slide-number: true
+    include-in-header: 
+      text: |
+        \setbeamertemplate{navigation symbols}{}
+        \setbeamertemplate{headline}{}
+        \setbeamertemplate{footline}{
+          \hfill
+          {\small \insertframenumber}
+          \hspace{2em}
+          \vspace{2em}
+        }
+        \setbeamertemplate{title page}[empty]
+---
+
+## Докладчик
+
+:::::::::::::: {.columns align=center}
+::: {.column width="70%"}
+
+  * Бабенко Артём Сергеевич
+  * студент группы НФИмд-01-25
+  * Российский университет дружбы народов
+  * [1032259400@rudn.ru](mailto:1032259400@rudn.ru)
+  * <https://github.com/artyombabenko>
+
+:::
+::: {.column width="30%"}
+
+![](./image/MyPhoto.jpg)
+
+:::
+::::::::::::::
+
+## Цель работы
+
+Освоить применение теории игр для анализа противостояния в сфере информационной безопасности. Научиться строить матричную игру, находить равновесие Нэша в чистых и смешанных стратегиях.
+
+## Задание
+
+- Формализовать конфликт «Защитник–Нападающий» в виде антагонистической игры.
+- Реализовать на Julia функции расчёта платёжной матрицы, поиска равновесия Нэша и симуляции игры.
+- Визуализировать зависимость ожидаемого выигрыша и равновесных вероятностей от стоимости защиты и величины ущерба.
+
+# Выполнение лабораторной работы
+
+## Создание проекта
+
+
+![Инициализация проекта](image/1.png){#fig-001 width=70%}
+
+## Создание проекта
+
+![Установка пакетов с помощью скрипта](image/2.png){#fig-002 width=70%}
+
+## Основной модуль
+
+
+![Скрипт src/simulation.jl](image/3.png){#fig-003 width=50%}
+
+## Запуск симуляций
+
+
+![Скрипт scripts/run_sims.jl](image/4.png){#fig-004 width=60%}
+
+## Построение графиков
+
+
+![Скрипт scripts/plot_results.jl](image/5.png){#fig-005 width=50%}
+
+## Результаты визуализации
+
+
+![Зависимость вероятности атаки на первый актив p1 от отношения ценностей V1/V2](image/6.png){#fig-006 width=60%}
+
+## Результаты визуализации
+
+
+![Средний выигрыш Нападающего](image/7.png){#fig-007 width=70%}
+
+## Дополнительное задание
+
+![Скрипт дополнительного задания](image/8.png){#fig-008 width=50%}
+
+## Дополнительное задание
+
+
+![Сравнение платёжных матриц](image/9.png){#fig-009 width=70%}
+
+## Генерация производных форматов
+
+
+![Запуск генерации производных форматов](image/10.png){#fig-010 width=70%}
+
+## Генерация производных форматов
+
+
+![Полученные файлы других форматов](image/11.png){#fig-011 width=70%}
+
+
+## Выводы
+
+На Julia созданы функции расчёта платёжной матрицы, поиска равновесия Нэша и симуляции игры для формализации конфликта «Защитник–Нападающий» в виде антагонистической игры. Визуализированы зависимость ожидаемого выигрыша и равновесных вероятностей от стоимости защиты и величины ущерба.
+
+## Список литературы
+
+1. JuliaLang [Электронный ресурс]. 2024 JuliaLang.org contributors. URL: https://julialang.org/ (дата обращения: 29.08.2026).
+
+2. DrWatson.jl Documentation [Электронный ресурс]. JuliaDynamics. URL: https://juliadynamics.github.io/DrWatson.jl/stable/ (дата обращения: 29.08.2026).
+
+3. Literate.jl Documentation [Электронный ресурс]. Fredrik Ekre. URL: https://fredrikekre.github.io/Literate.jl/v2/ (дата обращения: 29.08.2026).

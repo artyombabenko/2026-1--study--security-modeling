@@ -1,3 +1,4 @@
+latex-tinytex: true
 project:
   title: "report"
   output-dir: "_output"
@@ -5,10 +6,14 @@ project:
 standalone: true
 self-contained: true
 
+execute:
+  eval: false
+  echo: false
+
 ## Julia support
-# engine: julia
-# julia:
-#   exeflags: ["--project=../project"]
+engines: ['julia']
+julia:
+  exeflags: ["--project=../project"]
 
 ## Generic options
 lang: ru-RU
@@ -16,15 +21,18 @@ number-sections: true
 toc: true
 toc-title: "Содержание"
 toc-depth: 2
+
 ## Crossref customization
 crossref:
   lof-title: "Список иллюстраций"
   lot-title: "Список таблиц"
   lol-title: "Листинги"
+
 ## Bibliography
 bibliography:
   - bib/cite.bib
 csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
+
 ## Formats
 format:
   ### Docx output format
@@ -34,7 +42,11 @@ format:
     toc-depth: 2
   ### Pdf output format
   pdf:
-    # pdf-engine: xelatex
+    pdf-engine: lualatex
+    latex-engine-opts: "-shell-escape"
+    # mainfont: "Times New Roman"
+    # sansfont: "Arial"
+    # monofont: "Courier New"
     ### minted support
     # filters:
     #   - minted-quarto
@@ -43,15 +55,16 @@ format:
     colorlinks: false
     toc-depth: 2
     lof: true # List of figures
-    lot: true # List of tables
+    lot: false # List of tables
     #### Document
     documentclass: scrreprt
     papersize: a4
     fontsize: 12pt
     linestretch: 1.5
     #### Language
-    babel-lang: russian
-    babel-otherlangs: english
+    lang: ru-RU
+    # babel-lang: russian
+    # babel-otherlangs: english
     #### Biblatex
     cite-method: biblatex
     biblio-style: gost-numeric
